@@ -1,0 +1,3 @@
+En la carpeta data se debe guardar los usuarios localmente, se recomienda en json
+luego se analizara si es viable usar una base de datos para almacenar la información
+se debe usar properties para los mensajes y configuraciones
