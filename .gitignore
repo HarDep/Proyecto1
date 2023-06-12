@@ -30,3 +30,30 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+*.iml
+.attach*
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+/out
+
+# IDEs and editors
+.idea/
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+.history/*
+
+# System files
+Thumbs.db
