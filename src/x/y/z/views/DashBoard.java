@@ -13,6 +13,7 @@ public class DashBoard extends JFrame implements MainContract.View {
     public DashBoard() {
         putConfigs();
         principalPanel = new PrincipalPanel(this);
+        add(principalPanel);
     }
 
     private void putConfigs(){
