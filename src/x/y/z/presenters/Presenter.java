@@ -38,6 +38,11 @@ public class Presenter implements MainContract.Presenter{
     }
 
     @Override
+    public void deleteUser(int id) {
+        model.deleteUser(id);
+    }
+
+    @Override
     public void setLanguage(String filePath) {
         model.setLanguage(filePath);
     }

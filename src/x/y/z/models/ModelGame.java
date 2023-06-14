@@ -43,6 +43,11 @@ public class ModelGame implements MainContract.Model {
     }
 
     @Override
+    public void deleteUser(int id) {
+        //TODO eliminar usuario
+    }
+
+    @Override
     public void setLanguage(String filePath) {
         //TODO cambiar idioma
     }

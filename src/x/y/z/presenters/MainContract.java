@@ -11,6 +11,7 @@ public interface MainContract {
         void setUser(User user);
         User getUser(int id);
         List<User> getUsers();
+        void deleteUser(int id);
         void setLanguage(String filePath);
         void startRace(User user);
     }
@@ -21,6 +22,7 @@ public interface MainContract {
         void setUser(User user);
         User getUser(int id);
         List<User> getUsers();
+        void deleteUser(int id);
         void setLanguage(String filePath);
         void notifyMessage(String message);
         void startRace(User user);
