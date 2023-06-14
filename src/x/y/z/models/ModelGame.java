@@ -51,7 +51,7 @@ public class ModelGame implements MainContract.Model {
 
     @Override
     public void setLanguage(String filePath) {
-        UtilProperties.setLanguage(GlobalConfigs.PATH_LANGUAGE_ENGLISH);
+        UtilProperties.setLanguage(filePath);
     }
 
     @Override
