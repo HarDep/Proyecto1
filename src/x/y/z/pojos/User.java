@@ -1,6 +1,6 @@
 package x.y.z.pojos;
 
-public class User {
+public class User implements Cloneable {
     private String name;
     private int id;
     private double money;
@@ -43,5 +43,14 @@ public class User {
 
     public void setCar(Car car) {
         this.car = car;
+    }
+
+    @Override
+    public User clone() {
+        try {
+            return (User) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

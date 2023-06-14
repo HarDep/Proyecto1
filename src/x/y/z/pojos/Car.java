@@ -1,6 +1,6 @@
 package x.y.z.pojos;
 
-public class Car {
+public class Car implements Cloneable{
     private double speed;
     private int carType;
 
@@ -23,5 +23,14 @@ public class Car {
 
     public void setCarType(int carType) {
         this.carType = carType;
+    }
+
+    @Override
+    public Car clone() {
+        try {
+            return (Car) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
