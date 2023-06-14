@@ -1,7 +1,9 @@
 package x.y.z.models;
 
+import x.y.z.configs.GlobalConfigs;
 import x.y.z.pojos.User;
 import x.y.z.presenters.MainContract;
+import x.y.z.utils.UtilProperties;
 
 import java.util.List;
 
@@ -49,7 +51,7 @@ public class ModelGame implements MainContract.Model {
 
     @Override
     public void setLanguage(String filePath) {
-        //TODO cambiar idioma
+        UtilProperties.setLanguage(GlobalConfigs.PATH_LANGUAGE_ENGLISH);
     }
 
     @Override
