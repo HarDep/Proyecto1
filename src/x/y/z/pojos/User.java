@@ -5,12 +5,22 @@ public class User implements Cloneable {
     private int id;
     private double money;
     private Car car;
+    private int avatarNumber;
 
-    public User(String name, int id, double money, Car car) {
+    public User(String name, int id, double money, Car car,int avatarNumber) {
         this.name = name;
         this.id = id;
         this.money = money;
         this.car = car;
+        this.avatarNumber = avatarNumber;
+    }
+
+    public int getAvatarNumber() {
+        return avatarNumber;
+    }
+
+    public void setAvatarNumber(int avatarNumber) {
+        this.avatarNumber = avatarNumber;
     }
 
     public String getName() {

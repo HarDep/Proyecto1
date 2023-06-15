@@ -14,4 +14,25 @@ public class UtilImages {
         }
         return image;
     }
+
+    public static Image getAvatarImage(int avatarNumber,int width, int height){
+        Image image = null;
+        try {
+            switch (avatarNumber){
+                case 1 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_1_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                case 2 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_2_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                case 3 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_3_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                case 4 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_4_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                default -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_5_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return image;
+    }
 }
