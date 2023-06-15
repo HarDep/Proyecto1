@@ -4,6 +4,8 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 
+import static x.y.z.configs.GlobalConfigs.*;
+
 public class UtilImages {
     public static Image getImage(int width, int height, String path){
         Image image = null;
@@ -19,13 +21,13 @@ public class UtilImages {
         Image image = null;
         try {
             switch (avatarNumber){
-                case 1 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_1_image_path")))
+                case AVATAR_1 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_1_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
-                case 2 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_2_image_path")))
+                case AVATAR_2 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_2_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
-                case 3 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_3_image_path")))
+                case AVATAR_3 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_3_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
-                case 4 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_4_image_path")))
+                case AVATAR_4 -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_4_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
                 default -> image = ImageIO.read(new File(UtilProperties.getConfig("avatar_5_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
@@ -40,11 +42,11 @@ public class UtilImages {
         Image image = null;
         try {
             switch (carType){
-                case 1 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_1_image_path")))
+                case CAR_1 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_1_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
-                case 2 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_2_image_path")))
+                case CAR_2 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_2_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
-                case 3 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_3_image_path")))
+                case CAR_3 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_3_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
                 default -> image = ImageIO.read(new File(UtilProperties.getConfig("car_4_image_path")))
                         .getScaledInstance(width, height,Image.SCALE_SMOOTH);
