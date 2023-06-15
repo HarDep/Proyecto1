@@ -6,7 +6,11 @@ import x.y.z.utils.UtilImages;
 import x.y.z.utils.UtilProperties;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
 
 public class PanelUserSelection extends JPanel {
@@ -27,7 +31,7 @@ public class PanelUserSelection extends JPanel {
         northPanel.setPreferredSize(new Dimension(0,100));
         add(northPanel,BorderLayout.NORTH);
         panelUsers = new JPanel();
-        panelUsers.setBorder(BorderFactory.createLineBorder(GlobalConfigs.LINE_PANEL_COLOR));
+        panelUsers.setBorder(BorderFactory.createLineBorder(GlobalConfigs.LINE_PANEL_COLOR,4,true));
         JScrollPane scrollPane = new JScrollPane(panelUsers);
         add(scrollPane,BorderLayout.CENTER);
         JPanel panelButton = new JPanel();
@@ -46,8 +50,8 @@ public class PanelUserSelection extends JPanel {
     }
 
     private void putUsers() {
-        List<User> users = principalPanel.dashBoard.presenter.getUsers();
-        //List<User> users = List.of(new User("juan",7,0,null,1));
+        //List<User> users = principalPanel.dashBoard.presenter.getUsers();
+        List<User> users = List.of(new User("juan",7,0,null,1));
         for (User user: users) {
             createPanel(user);
         }
@@ -57,17 +61,22 @@ public class PanelUserSelection extends JPanel {
 
     private void createPanel(User user) {
         JPanel panel = new JPanel();
-        panel.setBorder(BorderFactory.createLineBorder(GlobalConfigs.LINE_PANEL_COLOR));
+        panel.setBorder(new TitledBorder(new LineBorder(GlobalConfigs.LINE_PANEL_COLOR,2,true)
+                ,UtilProperties.getText("select_user_text"),TitledBorder.LEFT,TitledBorder.DEFAULT_POSITION));
         JLabel userName = new JLabel(UtilProperties.getText("label_user_text") + " " + user.getName());
         JLabel userAvatar = new JLabel(new ImageIcon(UtilImages.getAvatarImage(user.getAvatarNumber(), 50,50)));
-        JButton button = new JButton(UtilProperties.getText("select_user_text"));
-        button.addActionListener(e -> selectUser(user));
-        panel.add(button);
+        panel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                selectUser(user);
+            }
+        });
         panel.add(userName);
         panel.add(userAvatar);
         panelUsers.add(panel);
     }
 
     private void selectUser(User user) {
+        System.out.println("entra-" + user.getName());
     }
 }
