@@ -35,4 +35,23 @@ public class UtilImages {
         }
         return image;
     }
+
+    public static Image getCarTypeImage(int carType,int width, int height){
+        Image image = null;
+        try {
+            switch (carType){
+                case 1 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_1_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                case 2 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_2_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                case 3 -> image = ImageIO.read(new File(UtilProperties.getConfig("car_3_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+                default -> image = ImageIO.read(new File(UtilProperties.getConfig("car_4_image_path")))
+                        .getScaledInstance(width, height,Image.SCALE_SMOOTH);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return image;
+    }
 }
