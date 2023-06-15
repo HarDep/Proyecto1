@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PrincipalPanel extends JPanel {
-    private final DashBoard dashBoard;
+    final DashBoard dashBoard;
     PanelRace panelRace;
     FirtsPage firtsPage;
 
@@ -28,5 +28,19 @@ public class PrincipalPanel extends JPanel {
         /*remove(panelRace);
         add(firtsPage);
         firtsPage.setVisible(true);*/
+    }
+
+    //pueden usar este metodo para cambiar entre paneles para cualquier panel
+    public void setToShow(JPanel panel){
+        hideAll();
+        removeAll();
+        panel.setVisible(true);
+        add(panel,BorderLayout.CENTER);
+    }
+
+    private void hideAll() {
+        for (Component component:getComponents()) {
+            component.setVisible(false);
+        }
     }
 }
