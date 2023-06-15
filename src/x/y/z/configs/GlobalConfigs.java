@@ -16,4 +16,6 @@ public class GlobalConfigs {
     public static final int CAR_2 = 2;
     public static final int CAR_3 = 3;
     public static final int CAR_4 = 4;
+    public static final Color LINE_PANEL_COLOR = new Color(105, 105, 81);
+    public static final Font TITLES_FONT = new Font("TimesRoman",Font.BOLD,70);
 }

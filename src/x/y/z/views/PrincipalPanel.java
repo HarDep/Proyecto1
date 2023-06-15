@@ -7,11 +7,13 @@ public class PrincipalPanel extends JPanel {
     final DashBoard dashBoard;
     PanelRace panelRace;
     FirtsPage firtsPage;
+    PanelUserSelection panelUserSelection;
 
     public PrincipalPanel(DashBoard dashBoard) {
         this.dashBoard = dashBoard;
         this.panelRace = new PanelRace();
         this.firtsPage = new FirtsPage(this);
+        this.panelUserSelection = new PanelUserSelection(this);
         setLayout(new BorderLayout());
         addComponents();
     }
