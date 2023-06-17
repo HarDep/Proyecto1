@@ -15,7 +15,6 @@ public class FirtsPage extends JPanel {
         label.setBounds(0,0,100,10);
         panel.add(label);
         JButton button = new JButton("ddd");
-        button.addActionListener(e -> principalPanel.panelUserSelection.showSelectionUsersPanel());
         button.setBounds(100,0,100,10);
         panel.add(button);
     }

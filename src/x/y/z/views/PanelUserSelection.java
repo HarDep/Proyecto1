@@ -50,8 +50,7 @@ public class PanelUserSelection extends JPanel {
     }
 
     private void putUsers() {
-        //List<User> users = principalPanel.dashBoard.presenter.getUsers();
-        List<User> users = List.of(new User("juan",7,0,null,1));
+        List<User> users = principalPanel.dashBoard.presenter.getUsers();
         for (User user: users) {
             createPanel(user);
         }
@@ -77,6 +76,7 @@ public class PanelUserSelection extends JPanel {
     }
 
     private void selectUser(User user) {
+        //TODO enlazar con el siguiente panel
         System.out.println("entra-" + user.getName());
     }
 }
