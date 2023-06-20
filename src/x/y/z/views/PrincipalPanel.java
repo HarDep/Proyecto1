@@ -7,27 +7,54 @@ public class PrincipalPanel extends JPanel {
     final DashBoard dashBoard;
     PanelRace panelRace;
     FirtsPage firtsPage;
+    ConfigMenu configMenu;
+    LanguageMenu languageMenu;
+    MainMenu mainMenu;
 
     public PrincipalPanel(DashBoard dashBoard) {
         this.dashBoard = dashBoard;
         this.panelRace = new PanelRace();
         this.firtsPage = new FirtsPage(this);
+        this.configMenu = new ConfigMenu(this);
+        this.languageMenu = new LanguageMenu(this);
+        this.mainMenu = new MainMenu(this);
         setLayout(new BorderLayout());
         addComponents();
     }
 
     private void addComponents() {
-        add(firtsPage, BorderLayout.CENTER);
+        mainMenu.setVisible(true);
+        add(mainMenu, BorderLayout.CENTER);
         //TODO poner componentes
     }
 
     public void setPanel(){
-        firtsPage.setVisible(false);
+        mainMenu.setVisible(false);
         add(panelRace,BorderLayout.CENTER);
-        // mostrar el anterior
-        /*remove(panelRace);
-        add(firtsPage);
-        firtsPage.setVisible(true);*/
+    }
+
+    public void setPanel1(){
+        mainMenu.setVisible(false);
+        add(configMenu,BorderLayout.CENTER);
+        configMenu.setVisible(true);
+    }
+
+    public void setPanel2(){
+        configMenu.setVisible(false);
+        add(languageMenu,BorderLayout.CENTER);
+        languageMenu.setVisible(true);
+    }
+
+    public void backPanel1(){
+        configMenu.setVisible(false);
+        mainMenu.setVisible(true);
+        add(mainMenu,BorderLayout.CENTER);
+    }
+
+    public void backPanel2(){
+        languageMenu.setVisible(false);
+        configMenu.setVisible(true);
+        add(configMenu,BorderLayout.CENTER);
     }
 
     //pueden usar este metodo para cambiar entre paneles para cualquier panel
