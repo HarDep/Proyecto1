@@ -11,4 +11,12 @@ public class ManagerUsers {
     public ManagerUsers() {
         users = new ArrayList<>();
     }
+
+    public void addUser(User user){
+
+    }
+
+    private setCarByUser(){
+
+    }
 }
